@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 
+
 class AliasServiceProvider extends ServiceProvider
 {
     /**
@@ -14,7 +15,10 @@ class AliasServiceProvider extends ServiceProvider
     {
         $loader = AliasLoader::getInstance();
 
-        // Add your aliases
+//         Add your aliases
+
+        $loader->alias('format', \NumberFormatter::class);
+        $loader->alias('Currency', \NumberFormatter::class);
         $loader->alias('Currency', \App\Helpers\Currency::class);
 
     }

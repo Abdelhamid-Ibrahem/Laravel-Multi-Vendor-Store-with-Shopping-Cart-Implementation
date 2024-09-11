@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Front;
 
-use AllowDynamicProperties;
+
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Repositories\Cart\CartModelRepository;
 use App\Repositories\Cart\CartRepository;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
 
 
 class CartController extends Controller
@@ -24,10 +23,9 @@ class CartController extends Controller
      */
     public function index(CartRepository $cart)
     {
-        $repository = App::make('Cart');
-        $items = $repository->get();
+
         return view('front.cart', [
-            'cart' => $items,
+            'cart' => $cart,
         ]);
     }
 

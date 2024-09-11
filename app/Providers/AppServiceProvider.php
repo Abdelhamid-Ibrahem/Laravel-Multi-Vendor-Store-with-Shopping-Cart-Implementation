@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+
+use App\Repositories\Cart\CartModelRepository;
+use App\Repositories\Cart\CartRepository;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\ServiceProvider;
@@ -14,9 +17,9 @@ class AppServiceProvider extends ServiceProvider
      * Register any application services.
      */
 
-//    public $bindings = [
-//        CartModelRepository::class =>  CartRepository::class,
-//    ];
+    public $bindings = [
+        CartRepository::class =>   CartModelRepository::class,
+    ];
 
     public function register(): void
     {

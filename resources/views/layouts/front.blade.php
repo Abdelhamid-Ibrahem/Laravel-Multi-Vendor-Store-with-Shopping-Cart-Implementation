@@ -20,11 +20,11 @@
 
 <body>
 <!--[if lte IE 9]>
-<p class="browserupgrade">
-    You are using an <strong>outdated</strong> browser. Please
-    <a href="https://browsehappy.com/">upgrade your browser</a> to improve
-    your experience and security.
-</p>
+<!<p class="browserupgrade">-->
+<!--    You are using an <strong>outdated</strong> browser. Please-->
+<!--    <a href="https://browsehappy.com/">upgrade your browser</a> to improve-->
+<!--    your experience and security.-->
+<!--</p>---->
 <![endif]-->
 
 <!-- Preloader -->
@@ -111,7 +111,7 @@
                 <div class="col-lg-3 col-md-3 col-7">
                     <!-- Start Header Logo -->
                     <a class="navbar-brand" href="index.html">
-                        <img src="assets/images/logo/logo.svg" alt="Logo">
+                        <img src="{{ asset('assets/images/logo/logo.svg') }}" alt="Logo">
                     </a>
                     <!-- End Header Logo -->
                 </div>

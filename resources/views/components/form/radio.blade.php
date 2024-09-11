@@ -1,6 +1,7 @@
 @props([
-    'name', 'options', 'checked' => false
+    'name', 'options', 'checked' => false, 'label'
 ])
+{{--<label for="{{ $name }}" class="form-label">{{ $label }}</label>--}}
 @foreach($options as $value => $text)
     <div class="form-check">
         <input class="form-check-input" type="radio" name="{{ $name }}" value="{{ $value }}"

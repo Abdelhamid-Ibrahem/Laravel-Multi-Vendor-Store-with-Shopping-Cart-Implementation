@@ -14380,7 +14380,7 @@
 			 *  @type array
 			 *
 			 *  @example
-			 *    // Currency type detection plug-in:
+			 *    // currency type detection plug-in:
 			 *    $.fn.dataTable.ext.type.detect.push(
 			 *      function ( data, settings ) {
 			 *        // Check the numeric part

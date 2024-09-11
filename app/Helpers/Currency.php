@@ -6,28 +6,30 @@ use NumberFormatter;
 
 class Currency
 {
-    public function __invoke(...$params)
+     function __invoke(...$params)
     {
         return static::format(...$params);
+
     }
-    public static function format($amount, $currency = null)
+
+     public static function format($amount, $currency = null)
     {
-        $Formatter = new
-           NumberFormatter(config('app.locale', 'en_US'),
-            NumberFormatter::CURRENCY);
+
+        $Formatter = new NumberFormatter(config('app.locale', 'en_US'), NumberFormatter::CURRENCY);
 
         if ($currency === null) {
             $currency = config('app.currency', 'USD');
         }
 
-        return $Formatter->format($amount, $currency);
+        return $Formatter->formatCurrency($amount, $currency);
+
     }
 
 }
 
-//class Currency
+//class currency
 //{
-//    public static function format($amount, $currency = null): false|string
+//    public function format($amount, $currency = null): false|string
 //    {
 //        // الحصول على الـ locale من إعدادات التطبيق
 //        $locale = config('app.locale');

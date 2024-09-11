@@ -7,14 +7,16 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use phpDocumentor\Reflection\DocBlock\Tag;
+
 
 
 class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['store_id ', 'name', 'slug', 'category_id', 'description', 'image', 'status', 'price', 'rating', 'compare_price'];
+    protected $fillable = [
+        'store_id ', 'name', 'slug', 'category_id', 'description', 'image', 'status', 'price', 'rating', 'compare_price'
+    ];
 
     public static function booted()
     {
@@ -30,8 +32,12 @@ class Product extends Model
     {
         return $this->belongsTo(Store::class, 'store_id', 'id');
     }
+//    public function tags(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+//    {
+//        return $this->belongsToMany(Tag::class);
+//    }
 
-    public function tags()
+    public function tags(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(
             Tag::class,           // Related Model

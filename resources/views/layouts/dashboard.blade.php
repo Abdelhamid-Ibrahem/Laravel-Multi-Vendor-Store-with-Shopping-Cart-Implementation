@@ -13,9 +13,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.css') }}">
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/adminlte.css') }}">
     @stack('styles')
 </head>
 <body class="hold-transition sidebar-mini">
@@ -182,7 +182,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                          alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+                    <a href="{{ route('dashboard.profile.edit') }}" class="d-block">{{ Auth::user()->name }}</a>
                     <form action="{{ route('logout') }}" method="post">
                       {{-- <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         {{ csrf_field() }}  --}}

@@ -70,10 +70,10 @@
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-2 col-12">
-                            <p>{{ Currency::format($item->quantity * $item->product->price) }}</p>
+                            <p>${{ $item->quantity * $item->product->price }}</p>
                         </div>
                         <div class="col-lg-2 col-md-2 col-12">
-                            <p>{{ Currency::format(0) }}</p>
+                            <p>${{ 0 }}</p>
                         </div>
                         <div class="col-lg-1 col-md-2 col-12">
                             <a class="remove-item" href="javascript:void(0)"><i class="lni lni-close"></i></a>
@@ -103,7 +103,7 @@
                             <div class="col-lg-4 col-md-6 col-12">
                                 <div class="right">
                                     <ul>
-                                        <li>Cart Subtotal<span>{{ Currency::format($cart->total()) }}</span></li>
+                                        <li>Cart Subtotal<span>${{ $cart->total() }}</span></li>
                                         <li>Shipping<span>Free</span></li>
                                         <li>You Save<span>$29.00</span></li>
                                         <li class="last">You Pay<span>$2531.00</span></li>

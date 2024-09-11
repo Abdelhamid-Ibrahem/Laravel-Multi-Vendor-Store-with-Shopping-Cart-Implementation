@@ -3,18 +3,18 @@
 namespace App\Providers;
 
 use App\Repositories\Cart\CartModelRepository;
-use App\Repositories\Cart\CartRepository;
-use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
-class CartServiceProvider extends ServiceProvider implements DeferrableProvider
+class CartServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
      */
     public function register()
     {
-        $this->app->bind(CartRepository::class, CartModelRepository::class );
+        $this->app->bind(CartModelRepository::class, function () {
+            return new CartModelRepository();
+        });
     }
 
     /**
